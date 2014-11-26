@@ -16,10 +16,6 @@ function get_pharo_image() {
 	fi
 }
 
-function test_get_pharo_image() {
-	get_pharo_image
-}
-
 function get_config_file() {
 	echo 'TODO!'
 }
