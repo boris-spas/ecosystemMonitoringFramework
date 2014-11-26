@@ -5,7 +5,7 @@
 # ------------------------------------------------------------------
 
 function count_the_projects() {
-	$PHARO "browser := MetacelloConfigurationBrowser new.repo := browser configBrowserModel availableRepositories first.projectList := browser configBrowserModel configurationList listItems. projectList size."
+	pharo_exec "browser := MetacelloConfigurationBrowser new.repo := browser configBrowserModel availableRepositories first.projectList := browser configBrowserModel configurationList listItems. projectList size."
 }
 
 

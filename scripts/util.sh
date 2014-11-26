@@ -19,3 +19,7 @@ function echo_funtion_name() {
 	echo $1
 	echo_simple_line
 }
+
+function pharo_exec() {
+        ./pharo $IMAGE eval $1
+}
