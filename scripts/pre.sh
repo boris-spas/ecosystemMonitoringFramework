@@ -19,6 +19,10 @@ function get_pharo_image() {
 	echo_simple_line
 }
 
+function load_EMF() {
+        $PHARO "Gofer new url: 'http://smalltalkhub.com/mc/spasojev/EMF/main'; package: 'ConfigurationOfEATIBackend'; load. (Smalltalk at: #ConfigurationOfEMF) loadDevelopment."
+}
+
 function get_config_file() {
 	echo 'TODO!'
 }
@@ -29,6 +33,7 @@ function run_pre_config() {
 
 function pre_script_main() {
 	get_pharo_image
+	load_EMF
 	get_config_file
 	run_pre_config
 }

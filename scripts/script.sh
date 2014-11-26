@@ -17,12 +17,8 @@ function iterate_over_projects() {
 	done
 }
 
-function load_EMF() {
-	$PHARO "Gofer new url: 'http://smalltalkhub.com/mc/spasojev/EMF/main'; package: 'ConfigurationOfEATIBackend'; load. (Smalltalk at: #ConfigurationOfEMF) loadDevelopment."
-}
 
 function script_main() {
-	load_EMF
 	iterate_over_projects `count_the_projects`
 }
 
