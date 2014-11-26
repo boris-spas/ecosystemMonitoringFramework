@@ -1,2 +1,2 @@
 IMAGE='Pharo.image'
-PHARO=./pharo
+PHARO=./pharo $IMAGE eval
