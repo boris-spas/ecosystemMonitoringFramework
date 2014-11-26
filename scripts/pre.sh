@@ -37,9 +37,13 @@ function get_config_file() {
 
 function run_pre_config() {
         echo_funtion_name $FUNCNAME
+	
+	IFS=$'\n'
+	ST=`xmllint --xpath "/config/target/pre/st/text()" $CONFIG `
+	echo $ST
+	pharo_exec "$ST"
 
-	echo 'TODO!'
-
+	#SH=
 	echo_simple_line
 }
 
