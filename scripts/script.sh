@@ -14,10 +14,12 @@ function count_the_projects() {
 
 function iterate_over_projects() {
 	N=$1 #number of projects
+	ST=`xmllint --xpath "/config/target/analysis/st/text()" $CONFIG `
+
 	for ((i=1;i<=$N; i++))
 	do	
 		echo_date_box
-		pharo_exec "EMFUtils loadProjectWithIndex: $i. Transcript cr;cr;cr. EMFUtils projectClasses size"
+		pharo_exec "EMFUtils loadProjectWithIndex: $i.""$ST"
 	done
 }
 
