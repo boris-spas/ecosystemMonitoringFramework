@@ -21,7 +21,7 @@ function get_pharo_image() {
 
 function load_EMF() {
 	echo_funtion_name $FUNCNAME
-        
+
 	pharo_exec "Gofer new url: 'http://smalltalkhub.com/mc/spasojev/EMF/main'; package: 'ConfigurationOfEMF'; load. (Smalltalk at: #ConfigurationOfEMF) loadDevelopment. SmalltalkImage current snapshot: true andQuit: true ."
 	
 	echo_simple_line
@@ -29,26 +29,28 @@ function load_EMF() {
 
 function get_config_file() {
 	echo_funtion_name $FUNCNAME
-	
-	echo 'TODO!'
 
+	git clone $CONFIG_GIT_URL
+	
 	echo_simple_line
 }
 
 function run_pre_config() {
-        echo_funtion_name $FUNCNAME
-	
-	IFS=$'\n'
+	echo_funtion_name $FUNCNAME
+
 	ST=`xmllint --xpath "/config/target/pre/st/text()" $CONFIG `
-	echo $ST
+	ST=$ST'.SmalltalkImage current snapshot: true andQuit: true.'
 	pharo_exec "$ST"
 
-	#SH=
+	xmllint --xpath "/config/target/pre/sh/text()" $CONFIG > temp_script_for_config.sh
+	sh temp_script_for_config.sh
+	rm temp_script_for_config.sh
+
 	echo_simple_line
 }
 
 function pre_script_main() {
-        echo_funtion_name $FUNCNAME	
+	echo_funtion_name $FUNCNAME	
 
 	get_pharo_image
 	load_EMF
@@ -57,3 +59,4 @@ function pre_script_main() {
 	
 	echo_simple_line
 }
+
