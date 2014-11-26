@@ -5,6 +5,7 @@
 # ------------------------------------------------------------------
 
 source variables.sh
+source util.sh
 source pre.sh
 source script.sh
 source post.sh
