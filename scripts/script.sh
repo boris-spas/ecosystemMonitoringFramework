@@ -5,7 +5,7 @@
 # ------------------------------------------------------------------
 
 function count_the_projects() {
-	./pharo $IMAGE eval "browser := MetacelloConfigurationBrowser new.repo := browser configBrowserModel availableRepositories first.projectList := browser configBrowserModel configurationList listItems. projectList size."
+	$PHARO $IMAGE eval "browser := MetacelloConfigurationBrowser new.repo := browser configBrowserModel availableRepositories first.projectList := browser configBrowserModel configurationList listItems. projectList size."
 }
 
 
