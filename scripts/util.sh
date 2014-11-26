@@ -16,6 +16,6 @@ function echo_simple_line() {
 
 function echo_funtion_name() {
 	echo_simple_line
-	echo $FUNCNAME
+	echo $1
 	echo_simple_line
 }

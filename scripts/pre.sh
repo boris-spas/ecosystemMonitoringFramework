@@ -7,13 +7,16 @@
 # ------------------------------------------------------------------
 
 function get_pharo_image() {
-	echo "Obtaining Pharo"
+	echo_funtion_name $FUNCNAME
+	
 	curl get.pharo.org | bash
 
 	if [[ ! -f pharo ]] ; then
 		echo 'Pharo is not there, aborting.'
 		exit
 	fi
+
+	echo_simple_line
 }
 
 function get_config_file() {
