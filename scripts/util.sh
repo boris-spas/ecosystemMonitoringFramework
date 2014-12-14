@@ -15,6 +15,7 @@ function echo_simple_line() {
 }
 
 function echo_funtion_name() {
+	echo ''
 	echo_simple_line
 	echo $1
 	echo_simple_line
