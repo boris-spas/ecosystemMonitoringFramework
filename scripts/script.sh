@@ -19,7 +19,8 @@ function iterate_over_projects() {
 	for ((i=1;i<=$N; i++))
 	do	
 		echo_date_box
-		pharo_exec "EMFUtils loadProjectWithIndex: $i.""$ST"
+		pharo_exec "EMFUtils loadProjectWithIndex: $i.""$ST" \
+		&& echo "EMF-PROJECT-SUCCESS"
 	done
 }
 
