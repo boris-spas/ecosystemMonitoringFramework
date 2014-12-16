@@ -22,7 +22,7 @@ function iterate_over_projects() {
 		echo 'starting on project '$i
 		echo ''
 		pharo_exec "EMFUtils loadProjectWithIndex: $i.""$ST" \
-		&& echo "EMF-PROJECT-SUCCESS"
+		&& echo "EMF-PROJECT-$i-SUCCESS"
 	done
 }
 
