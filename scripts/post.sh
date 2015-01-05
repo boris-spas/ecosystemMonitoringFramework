@@ -12,7 +12,7 @@ function run_post_config() {
 	ST=$ST'.SmalltalkImage current snapshot: true andQuit: true.'
 	pharo_exec "$ST"
 
-	xmllint --xpath "/config/target/post/sh/text()" $CONFIG > temp_script_for_config.sh
+	xmllint --xpath "/config/target/post/sh/text()" $CONFIG | sed 's/]]>/ /' | sed 's/<!\[CDATA\[//' > temp_script_for_config.sh
 	sh temp_script_for_config.sh
 	rm temp_script_for_config.sh
 	
