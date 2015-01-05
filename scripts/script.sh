@@ -34,7 +34,9 @@ function iterate_over_projects_parallel() {
 	git clone https://github.com/boris-spas/simpleParallelBash.git
 
 	#build the script that runs in parallel
-	echo `pwd`"/pharo `pwd`/$IMAGE eval \"EMFUtils loadProjectWithIndex: \$1. $ST\"" > simpleParallelBash/processOneProject.sh
+	echo "echo \"@@starting on \$1\"" > simpleParallelBash/processOneProject.sh
+	echo `pwd`"/pharo `pwd`/$IMAGE eval \"EMFUtils loadProjectWithIndex: \$1. $ST\" && echo BoriS-SUCCESS!" >> simpleParallelBash/processOneProject.sh
+	echo "echo \"@@done with \$1" >> simpleParallelBash/processOneProject.sh
 
 	#build the input file for simple parallel bash
 	for (( i = 1; i <= $N; i++ )); do
@@ -42,7 +44,7 @@ function iterate_over_projects_parallel() {
 	done
 
 	cd simpleParallelBash
-	sh run.sh processOneProject.sh input.txt 4
+	sh run.sh processOneProject.sh input.txt 10
 	cd ..
 }
 
