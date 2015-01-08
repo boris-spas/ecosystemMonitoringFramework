@@ -35,7 +35,8 @@ function iterate_over_projects_parallel() {
 
 	#build the script that runs in parallel
 	echo "echo \"@@starting on \$1\"" > simpleParallelBash/processOneProject.sh
-	echo `pwd`"/pharo `pwd`/$IMAGE eval \"EMFUtils loadProjectWithIndex: \$1. $ST\" && echo BoriS-SUCCESS!" >> simpleParallelBash/processOneProject.sh
+	echo "curl get.pharo.org/vm | bash" >> simpleParallelBash/processOneProject.sh
+	echo "./pharo `pwd`/$IMAGE eval \"EMFUtils loadProjectWithIndex: \$1. $ST\" && echo @@BoriS-SUCCESS!" >> simpleParallelBash/processOneProject.sh
 	echo "echo \"@@done with \$1\"" >> simpleParallelBash/processOneProject.sh
 
 	#build the input file for simple parallel bash
@@ -44,7 +45,7 @@ function iterate_over_projects_parallel() {
 	done
 
 	cd simpleParallelBash
-	sh run.sh processOneProject.sh input.txt 16
+	bash run.sh processOneProject.sh input.txt 16 
 	cd ..
 }
 
