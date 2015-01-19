@@ -22,7 +22,7 @@ function get_pharo_image() {
 function load_EMF() {
 	echo_funtion_name $FUNCNAME
 
-	pharo_exec "Gofer new url: 'http://smalltalkhub.com/mc/spasojev/EMF/main'; package: 'ConfigurationOfEMF'; load. (Smalltalk at: #ConfigurationOfEMF) loadDevelopment. SmalltalkImage current snapshot: true andQuit: true ."
+	pharo_exec "Gofer new url: 'http://smalltalkhub.com/mc/spasojev/EMF/main'; package: 'ConfigurationOfEMF'; load. (Smalltalk at: #ConfigurationOfEMF) loadDevelopment. StartupPreferencesLoader allowStartupScript: false. SmalltalkImage current snapshot: true andQuit: true ."
 	
 	echo_simple_line
 }
