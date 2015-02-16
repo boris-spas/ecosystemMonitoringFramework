@@ -9,6 +9,6 @@ rm -rf /tmp/emf
 mkdir /tmp/emf
 cp scripts/* /tmp/emf/
 cd /tmp/emf
-sh main.sh > $OUTFILE 2>&1
+bash main.sh > $OUTFILE 2>&1
 cd ..
 rm -rf /tmp/eati
