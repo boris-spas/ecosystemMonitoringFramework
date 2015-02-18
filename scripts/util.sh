@@ -22,5 +22,5 @@ function echo_funtion_name() {
 }
 
 function pharo_exec() {
-	./pharo $IMAGE eval $1
+	timeout 5h ./pharo $IMAGE eval $1
 }
