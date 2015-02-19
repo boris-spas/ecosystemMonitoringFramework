@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # ------------------------------------------------------------------
 # [BoriS] util.sh
 #          Helper functions go here

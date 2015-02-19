@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # ------------------------------------------------------------------
 # [BoriS] post.sh
 #          Should be run after the main script is done. 

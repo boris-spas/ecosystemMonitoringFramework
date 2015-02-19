@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 # ------------------------------------------------------------------
 # [BoriS] pre.sh
 #          To be run before the main script. 
