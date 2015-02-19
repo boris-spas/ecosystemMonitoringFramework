@@ -13,7 +13,7 @@ function run_post_config() {
 	pharo_exec "$ST"
 
 	xmllint --xpath "/config/target/post/sh/text()" $CONFIG | sed 's/]]>/ /' | sed 's/<!\[CDATA\[//' > temp_script_for_config.sh
-	sh temp_script_for_config.sh
+	bash temp_script_for_config.sh
 	rm temp_script_for_config.sh
 	
 	echo_simple_line
