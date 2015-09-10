@@ -9,7 +9,8 @@
 function get_pharo_image() {
 	echo_funtion_name $FUNCNAME
 	
-	curl get.pharo.org | bash
+	curl get.pharo.org/30 | bash
+	curl get.pharo.org/vm | bash
 
 	if [[ ! -f pharo ]] ; then
 		echo 'Pharo is not there, aborting.'
