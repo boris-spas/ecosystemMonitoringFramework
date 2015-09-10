@@ -44,7 +44,7 @@ function iterate_over_projects_parallel() {
 	done
 
 	cd simpleParallelBash
-	bash run.sh processOneProject.sh input.txt 16 ../pharo ../pharo-vm ../Pharo.image ../Pharo.changes
+	bash run.sh processOneProject.sh input.txt 24 ../pharo ../pharo-vm ../Pharo.image ../Pharo.changes
 	cd ..
 }
 
