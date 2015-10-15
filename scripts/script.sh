@@ -16,7 +16,7 @@ function iterate_over_projects() {
 	N=$1 #number of projects
 	ST=`xmllint --xpath "/config/target/analysis/st/text()" $CONFIG `
 
-	for ((i=1;i<=$N; i++))
+	for ((i=0;i<=$N; i++))
 	do	
 		echo_date_box
 		echo 'starting on project '$i
@@ -39,7 +39,7 @@ function iterate_over_projects_parallel() {
 	echo "echo \"@@done with \$1\"" >> simpleParallelBash/processOneProject.sh
 
 	#build the input file for simple parallel bash
-	for (( i = 1; i <= $N; i++ )); do
+	for (( i = 0; i <= $N; i++ )); do
 		echo $i >> simpleParallelBash/input.txt
 	done
 
