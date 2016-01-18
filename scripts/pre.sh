@@ -9,6 +9,7 @@
 function get_pharo_image() {
 	echo_funtion_name $FUNCNAME
 	
+	rm -rf ~/.config/pharo
 	curl get.pharo.org/30 | bash
 	curl get.pharo.org/vm | bash
 
